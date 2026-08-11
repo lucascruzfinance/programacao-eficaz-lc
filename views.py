@@ -7,5 +7,5 @@ def index():
         for dados in load_data('notes.json')
     ]
     notes = '\n'.join(notes_li)
-
+    
     return load_template('index.html').format(notes=notes)

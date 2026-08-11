@@ -10,9 +10,6 @@ def load_data(nome_arquivo):
     # json.load() lê o arquivo e transforma em dicionário Python
     dados = json.load(arquivo)
     
-    # Fecha o arquivo
-    arquivo.close()
-    
     # Devolve o dicionário
     return dados
 
