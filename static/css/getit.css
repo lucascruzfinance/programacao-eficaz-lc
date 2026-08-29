@@ -1,0 +1,201 @@
+/* ===== Get-it — estilo da página ===== */
+
+:root {
+  --cor-fundo: #f4f1ea;
+  --cor-nota: #fff7cc;
+  --cor-nota-fav: #ffe89a;
+  --cor-texto: #3a3226;
+  --cor-suave: #7a7061;
+  --cor-primaria: #f4a261;
+  --cor-primaria-escura: #e07a3c;
+  --cor-borda: #e3ddcf;
+  --sombra: 0 4px 12px rgba(0, 0, 0, 0.10);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.5;
+}
+
+/* ----- Cabeçalho ----- */
+.topo {
+  text-align: center;
+  padding: 32px 16px 8px;
+}
+
+.logo {
+  max-width: 220px;
+  height: auto;
+}
+
+.slogan {
+  margin: 4px 0 0;
+  color: var(--cor-suave);
+  font-style: italic;
+}
+
+/* ----- Conteúdo ----- */
+.conteudo {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+/* ----- Formulário ----- */
+.form-nota {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: var(--sombra);
+  border: 1px solid var(--cor-borda);
+  margin-bottom: 32px;
+}
+
+.form-nota label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.form-nota input[type="text"],
+.form-nota input:not([type]) {
+  padding: 10px 12px;
+  border: 1px solid var(--cor-borda);
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #fdfdfb;
+}
+
+.form-nota input:focus {
+  outline: none;
+  border-color: var(--cor-primaria);
+  box-shadow: 0 0 0 3px rgba(244, 162, 97, 0.25);
+}
+
+/* ----- Botões ----- */
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  transition: background 0.15s ease, transform 0.05s ease;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn-primario {
+  background: var(--cor-primaria);
+  color: #fff;
+  margin-top: 8px;
+}
+
+.btn-primario:hover {
+  background: var(--cor-primaria-escura);
+}
+
+.btn-secundario {
+  background: #e9e4d8;
+  color: var(--cor-texto);
+}
+
+.btn-secundario:hover {
+  background: #ddd6c6;
+}
+
+.form-acoes {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+/* ----- Lista de notas (cards) ----- */
+.lista-notas {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  position: relative;
+  background: var(--cor-nota);
+  border-radius: 12px;
+  padding: 18px 18px 14px;
+  box-shadow: var(--sombra);
+  display: flex;
+  flex-direction: column;
+}
+
+.card.favorited {
+  background: var(--cor-nota-fav);
+  box-shadow: 0 4px 14px rgba(224, 122, 60, 0.28);
+}
+
+.card h3 {
+  margin: 0 28px 8px 0;
+  font-size: 1.1rem;
+  word-break: break-word;
+}
+
+.card p {
+  margin: 0 0 14px;
+  color: var(--cor-texto);
+  word-break: break-word;
+  flex-grow: 1;
+}
+
+/* ----- Ações dentro do card ----- */
+.card-actions {
+  display: flex;
+  gap: 12px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  padding-top: 10px;
+}
+
+.acao {
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--cor-suave);
+}
+
+.acao-edit:hover {
+  color: var(--cor-primaria-escura);
+}
+
+.acao-delete:hover {
+  color: #c0392b;
+}
+
+/* Estrela de favorito no canto superior direito */
+.acao-fav {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: #d8a200;
+  text-decoration: none;
+}
+
+.acao-fav:hover {
+  transform: scale(1.15);
+}

@@ -140,6 +140,12 @@ celerybeat.pid
 .venv
 env/
 venv/
+# Ambiente virtual criado dentro do repositório
+programacao-eficaz-lc/
+pyvenv.cfg
+
+# Config local do Claude Code (não faz parte da entrega)
+.claude/
 ENV/
 env.bak/
 venv.bak/

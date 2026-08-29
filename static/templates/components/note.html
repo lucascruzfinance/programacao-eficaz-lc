@@ -1,4 +1,9 @@
-<li>
+<li class="card {fav_class}">
+    <a class="acao acao-fav" href="/favorite/{id}" name="favorite_button" title="Favoritar / desfavoritar">{fav_icon}</a>
     <h3>{title}</h3>
     <p>{details}</p>
+    <div class="card-actions">
+      <a class="acao acao-edit" href="/update/{id}" name="edit_button">Editar</a>
+      <a class="acao acao-delete" href="/delete/{id}" name="delete_button">Apagar</a>
+    </div>
   </li>

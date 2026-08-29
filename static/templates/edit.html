@@ -3,32 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Get-it</title>
+<title>Get-it - Editar anotação</title>
 <link rel="stylesheet" href="{{{{ url_for('static', filename='css/getit.css') }}}}">
 </head>
 <body>
 
 <header class="topo">
   <img class="logo" src="{{{{ url_for('static', filename='img/logo-getit.png') }}}}" alt="Get-it">
-  <p class="slogan">Como o Post-it, mas com outro verbo</p>
+  <p class="slogan">Editando uma anotação</p>
 </header>
 
 <main class="conteudo">
 
-  <form class="form-nota" action="/submit" method="POST">
-    <label for="titulo">Título</label>
-    <input id="titulo" type="text" name="titulo" />
-    <label for="detalhes">Detalhes</label>
-    <input id="detalhes" name="detalhes" />
-    <input class="btn btn-primario" type="submit" value="Adicionar" />
-  </form>
+  <form class="form-nota" action="/update" method="POST">
+    <input type="hidden" name="id" value="{id}" />
 
-  <ul class="lista-notas">
-  {notes}
-  </ul>
+    <label for="titulo">Título</label>
+    <input id="titulo" type="text" name="titulo" value="{title}" />
+
+    <label for="detalhes">Detalhes</label>
+    <input id="detalhes" type="text" name="detalhes" value="{details}" />
+
+    <div class="form-acoes">
+      <input class="btn btn-primario" type="submit" value="Salvar" />
+      <a class="btn btn-secundario" href="/">Cancelar</a>
+    </div>
+  </form>
 
 </main>
 
-<script src="{{{{ url_for('static', filename='js/getit.js') }}}}"></script>
 </body>
 </html>
